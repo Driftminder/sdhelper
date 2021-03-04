@@ -1,0 +1,18 @@
+.nav-height{
+    height: 60px;
+}
+
+.main-height{
+    height: calc(100vh - 60px);
+}
+
+.text-area{
+    height: 300px;
+    resize: none;
+}
+
+.bouton-area{
+    width: 200px;
+    height: 400px;
+    margin-top: 20px;
+}
