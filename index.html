@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/tailwind.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+
 </head>
 <body class="bg-gray-100">
     <div class="flex flex-col w-screen h-screen">
@@ -43,10 +44,10 @@
                 <!-- Bouton multiple pour les templates lié au contexte -->
                 <div class="flex flex-wrap bouton-area bg-gray-300 rounded-md opacity-">
                     <div class="flex flex-wrap justify-center content-center ">
-                        <button id="relance1AZ" class="flex m-2 bg-blue-400 p-1 rounded-md border-4 border-blue-600 focus:outline-none">Relance 1</button>
-                        <button id="relance2AZ" class="flex m-2 bg-blue-400 p-1 rounded-md border-4 border-blue-600 focus:outline-none">Relance 2</button>
-                        <button id="relance3AZ" class="flex m-2 bg-blue-400 p-1 rounded-md border-4 border-blue-600 focus:outline-none">Relance 3</button>
-                        <button id="phishAlerttmp" class="flex m-2 bg-blue-400 p-0.25 rounded-md border-4 border-blue-600 focus:outline-none">Phish Alert</button>
+                        <button class="flex m-2 bg-blue-400 p-1 rounded-md border-4 border-blue-600 focus:outline-none" onclick="triggerRelance1AZ()">Relance 1</button>
+                        <button class="flex m-2 bg-blue-400 p-1 rounded-md border-4 border-blue-600 focus:outline-none" onclick="triggerRelance2AZ()">Relance 2</button>
+                        <button class="flex m-2 bg-blue-400 p-1 rounded-md border-4 border-blue-600 focus:outline-none" onclick="triggerRelance3AZ()">Relance 3</button>
+                        <button class="flex m-2 bg-blue-400 p-0.25 rounded-md border-4 border-blue-600 focus:outline-none" onclick="triggerPhishAlert()">Phish Alert</button>
                         <!-- <button class="flex m-2 bg-blue-400 p-1 rounded-md border-4 border-blue-600"></button> -->
                     </div>
                     
@@ -66,6 +67,7 @@
                 </div>
             </div>
         </div>  
-    </div>   
+    </div>
+    <script src = "js/workspace.js" ></script>
 </body>
 </html>
