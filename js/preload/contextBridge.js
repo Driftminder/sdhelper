@@ -6,10 +6,12 @@ const {
 contextBridge.exposeInMainWorld(
     "api",{
         send: (channel, data) => {
-            let validChannels = ['copyToClipboard'];
+            let validChannels = ['copyToClipboard', 'changeContext'];
             if(validChannels.includes(channel)){
                 ipcRenderer.send(channel, data);
             }
         }
     }
 )
+
+

@@ -21,7 +21,7 @@ function createWindow () {
 
 app.whenReady().then(createWindow)
 
-// Chargement des différents process comme IPC qui permet de faire fonction le electron.clipboard
+// Chargement des différents process comme IPC qui permet de faire fonctionner le electron.clipboard
 require("./js/mainProcess/index.js")
 
 app.on('window-all-closed', () => {
