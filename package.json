@@ -1,19 +1,32 @@
 {
   "name": "SDHelper",
   "version": "1.0.0",
-  "description": "",
+  "description": "Test de l'appli",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "dist": "build",
+    "pack": "electron-builder"
   },
+
+  "build": {
+    "appId": "HelperDesk",
+    "win": {
+      "target": "nsis"
+    }
+  },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^12.0.0",
-    "electron-reloader": "^1.2.0"
+    "electron-reloader": "^1.2.0",
+    "electron-builder": "^22.10.5"
   },
   "dependencies": {
     "jquery": "^3.6.0"
   }
+  
 }

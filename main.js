@@ -14,7 +14,7 @@ function createWindow () {
     },
   })
 //   win.removeMenu()
-  win.loadFile('index.html')
+  win.loadFile('indexes/index.html')
 
 }
 

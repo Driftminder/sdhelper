@@ -35,6 +35,14 @@ function generateTicket(){
     window.api.send("copyToClipboard", `PAC GCO le ${date} à ${time} ${readableMode}\nNom :\nPrénom :\nN° Tél. :\nSite :\nPoste :`)
 }
 
-function triggerRelance2AZ(){
+function triggerPhishAlert(){
+    var fulldate = new Date(Date.now()).toLocaleString().split(", ")
+    var date = fulldate[0]
+    var time = fulldate[1].split(":")[0]+":"+fulldate[1].split(":")[1]
+    window.api.send("copyToClipboard", `PAC GCO le ${date} à ${time} MAIL\nNom :\nPrénom :\nN° Tél. :\nSite :\n\nDescription :Suspicion de mail frauduleux\nutilisation du bouton d'alerte = mail supprimé automatiquement`)
+    
+}
+
+function triggerRelance1AZ(){
     window.api.send("copyToClipboards", "")
 }

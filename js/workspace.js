@@ -44,5 +44,9 @@ function selectContextWindow($event){
         case context.AEP:
             window.api.send("changeContext", "aepIndex.html")
             break;
+
+        case context.MAIN:
+            window.api.send("changeContext", "index.html")
     }
 }
+

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>HelperDesk</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <link rel="stylesheet" href="css/tailwind.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/tailwind.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 
 </head>
@@ -15,7 +15,7 @@
         <div class="flex flex-wrap nav-height">
             <!-- Placement du logo -->
             <div class="bg-blue-400 w-screen h-100">
-                <img class="m-3"src="img/az.png"/>
+                <img class="m-3"src=""/>
             </div>
         </div>  
         <!-- corps de l'application -->
@@ -25,13 +25,13 @@
                 <!-- Menu déroulant pour le choix du context -->
                 <div class="flex flex-wrap m-3 p-3">
                     <form>
-                        <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="selectContextWindow(this)">
+                        <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="() => {selectContextWindow(this); currentContext()}">
                         </select>
                     </form>
                 </div>
             </div>
         </div>  
     </div>
-    <script src = "js/workspace.js" ></script>
+    <script src = "../js/workspace.js" ></script>
 </body>
 </html>
