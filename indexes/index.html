@@ -21,6 +21,57 @@
         <!-- corps de l'application -->
         <div class="flex flex-wrap w-screen main-height bg-gray-400">
             <div class="flex flex-wrap w-screen">
+                <!-- date d'expiration -->
+                <div class="flex flex-wrap w-screen p-3 content-center justify-center">
+                    <!-- timer antargaz -->
+                    <div class="flex flex-col w-15 flex-col p-3">
+                        <label for="start">Antargaz</label>
+                        <input type="date" id="start" name="trip-start"
+                        value="2021-03-15"
+                        min="2021-03-15" max="2099-12-31">
+                        <button id="timerAZ" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
+                    </div>
+                    <!-- Timer Antargaz ADM -->
+                    <div class="flex flex-col w-15 flex-col p-3">
+                        <label for="start">Antargaz ADM</label>
+                        <input type="date" id="start" name="trip-start"
+                        value="2021-03-15"
+                        min="2021-03-15" max="2099-12-31">
+                        <button id="timerAZADM" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
+                    </div>
+                    <!-- Timer Proxiserve -->
+                    <div class="flex flex-col w-15 flex-col p-3">
+                        <label for="start">Proxiserve</label>
+                        <input type="date" id="start" name="trip-start"
+                        value="2021-03-15"
+                        min="2021-03-15" max="2099-12-31">
+                        <button id="timerPXS" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
+                    </div>
+                    <!-- Timer AEP -->
+                    <div class="flex flex-col w-15 flex-col p-3">
+                        <label for="start">AEP</label>
+                        <input type="date" id="start" name="trip-start"
+                        value="2021-03-15"
+                        min="2021-03-15" max="2099-12-31">
+                        <button id="timerAEP" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
+                    </div>
+                    <!-- Timer FDP -->
+                    <div class="flex flex-col w-15 flex-col p-3">
+                        <label for="start">FDP</label>
+                        <input type="date" id="start" name="trip-start"
+                        value="2021-03-15"
+                        min="2021-03-15" max="2099-12-31">
+                        <button id="timerFDP" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
+                    </div>
+                    <!-- Timer Pasteur -->
+                    <div class="flex flex-col w-15 flex-col p-3">
+                        <label for="start">Pasteur</label>
+                        <input type="date" id="start" name="trip-start"
+                        value="2021-03-15"
+                        min="2021-03-15" max="2099-12-31">
+                        <button id="timerPasteur" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
+                    </div>
+                </div>
                 
                 <!-- Menu déroulant pour le choix du context -->
                 <div class="flex flex-wrap m-3 p-3">
@@ -33,5 +84,6 @@
         </div>  
     </div>
     <script src = "../js/workspace.js" ></script>
+    <script src = "../js/workspaces/mainpage.js"></script>
 </body>
 </html>
