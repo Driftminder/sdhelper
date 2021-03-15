@@ -15,8 +15,11 @@ function createWindow () {
   })
 //   win.removeMenu()
   win.loadFile('indexes/index.html')
+  // win.setMaximumSize(440, 630);
 
 }
+
+
 
 
 app.whenReady().then(createWindow)

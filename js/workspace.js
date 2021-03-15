@@ -17,6 +17,11 @@ Object.keys(context).forEach(key => {
     document.getElementById("windowSwitch").appendChild(option)
 });
 
+function clearContents() {
+    console.log("clear");
+    document.getElementById("postIt").innerHTML="";
+}
+
 function selectContextWindow($event){
     console.log($event.value)
 

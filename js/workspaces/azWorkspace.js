@@ -19,6 +19,8 @@ function changeSelectedTicketMode($event){
 }
 
 function generateTicket(){
+    var name = document.getElementById("techTrigrame").value != "" ? document.getElementById("techTrigrame").value : "XXX"
+    console.log(document.getElementById("techTrigrame").value)
     var fulldate = new Date(Date.now()).toLocaleString().split(", ")
     var date = fulldate[0]
     var time = fulldate[1].split(":")[0]+":"+fulldate[1].split(":")[1]
@@ -32,14 +34,17 @@ function generateTicket(){
             readableMode = "MAIL"
             break;
     }
-    window.api.send("copyToClipboard", `PAC GCO le ${date} à ${time} ${readableMode}\nNom :\nPrénom :\nN° Tél. :\nSite :\nPoste :`)
+    window.api.send("copyToClipboard", `PAC ${name} le ${date} à ${time} ${readableMode}\nNom :\nPrénom :\nN° Tél. :\nSite :\nPoste :`)
 }
 
 function triggerPhishAlert(){
+    // var name = document.getElementById("techTrigrame").value != "" ? document.getElementById("techTrigrame").value : "XXX"
+    // console.log(document.getElementById("techTrigrame").value)
+    var name = document.getElementById("techTrigrame").value || "XXX"
     var fulldate = new Date(Date.now()).toLocaleString().split(", ")
     var date = fulldate[0]
     var time = fulldate[1].split(":")[0]+":"+fulldate[1].split(":")[1]
-    window.api.send("copyToClipboard", `PAC GCO le ${date} à ${time} MAIL\nNom :\nPrénom :\nN° Tél. :\nSite :\n\nDescription :Suspicion de mail frauduleux\nutilisation du bouton d'alerte = mail supprimé automatiquement`)
+    window.api.send("copyToClipboard", `PAC ${name} le ${date} à ${time} MAIL\nNom :\nPrénom :\nN° Tél. :\nSite :\n\nDescription :Suspicion de mail frauduleux\nutilisation du bouton d'alerte = mail supprimé automatiquement`)
     
 }
 

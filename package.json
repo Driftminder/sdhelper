@@ -1,6 +1,6 @@
 {
   "name": "SDHelper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Test de l'appli",
   "main": "main.js",
   "scripts": {
@@ -9,14 +9,12 @@
     "dist": "build",
     "pack": "electron-builder"
   },
-
   "build": {
     "appId": "HelperDesk",
     "win": {
       "target": "nsis"
     }
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -28,5 +26,4 @@
   "dependencies": {
     "jquery": "^3.6.0"
   }
-  
 }

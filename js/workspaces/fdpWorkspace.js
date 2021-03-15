@@ -1,4 +1,4 @@
-function triggerTicketFDP(){
+function generateTicket(){
     window.api.send("copyToClipboard", "Symptôme(s):\n\nTel:\n\nPoste:")
 }
 
@@ -17,6 +17,10 @@ function triggerRelance3FDP(){
 
 function triggerResolvingComment(){
     window.api.send("copyToClipboard", "Bonjour, suite à plusieurs tentatives de relances de notre part sans succès, nous nous permettons de clore ce ticket sans donner suite au traitement de celui-ci.\nMerci de votre compréhension\nLe Support Informatique")
+}
+
+function triggerOOS(){
+    window.api.send("copyToClipboard", "L'application XXX n'est pas dans le périmètre du service desk.\nMerci de vous rediriger vers le CCRV.\n\nCordialement,\nLe service desk\n01.41.28.84.31")
 }
 
 
