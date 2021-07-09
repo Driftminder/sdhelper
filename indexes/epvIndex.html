@@ -12,22 +12,28 @@
 <body class="bg-gray-100">
     <div class="flex flex-col w-screen h-screen">
         <!-- barre de navigation -->
-        <div class="flex flex-wrap nav-height">
+        <div class="flex flex-wrap justify-between nav-height bg-yellow-400 items-center">
             <!-- Placement du logo -->
-            <div class="bg-yellow-400 w-1/3 h-100">
-                <img class="m-3"src="img/az.png"/>
+            <div class=" h-100">
+                <img class="ml-3"src="../img/CdV.jpg"/>
             </div>
-            <!-- Choix de l'option tel ou mail -->
-            <div class="flex flex-wrap justify-center content-center bg-yellow-400 w-1/3 h-100">
-            </div>    
+            <div class="bg-gray-200 rounded-md h-100 p-1">
+                <p>Téléphone : 01.30.83.84.84</p>
+            </div>
+            <!-- Zone de saisie du numéro du ticket -->
+            <div class="py-4 h-100">
+                <!-- Numéro de ticket du dossier -->
+                <label for="ticket">Ticket :</label>
+                <input class="focus:outline-none" type="text" id="ticket" value="" size="3">
+            </div>  
             <!-- Bouton ticket pour créer le template pour le ticket -->
-            <div class="flex flex-wrap justify-center content-center bg-yellow-400 w-1/3 h-100"> 
-                <button class="bg-white p-1 rounded-md border-4 focus:outline-none active:bg-gray-300 border-yellow-600" onclick="generateTicket()">Ticket</button>
+            <div class="flex flex-wrap justify-center content-center h-100"> 
+                <button class="mr-3 bg-white p-1 rounded-md border-4 focus:outline-none active:bg-gray-300 border-yellow-600" onclick="generateTicket()">Ticket</button>
              </div>
         </div>  
         <!-- corps de l'application -->
         <div class="flex flex-wrap w-screen main-height bg-gray-400">
-            <div class="flex flex-wrap w-screen">
+            <div class="flex flex-wrap w-screen justify-between">
                 <!-- Zone de texte type post-it -->
                 <div class="flex flex-col h-100 w-50 justify-center content-center m-5"> 
                     <form> 
@@ -36,23 +42,57 @@
                     </form>
                 </div>
                 <!-- Bouton multiple pour les templates lié au contexte -->
-                <div class="flex flex-wrap bouton-area bg-gray-300 rounded-md opacity-">
+                <div class="flex flex-wrap bouton-area bg-gray-300 rounded-md mr-3">
                     <div class="flex flex-wrap justify-center content-center ">
-                        <button class="flex m-2 bg-yellow-400 p-1 rounded-md border-4 border-yellow-600 focus:outline-none" onclick="triggerRelance1AZ()">Relance 1</button>
-                        <button class="flex m-2 bg-yellow-400 p-1 rounded-md border-4 border-yellow-600 focus:outline-none" onclick="triggerRelance2AZ()">Relance 2</button>
-                        <button class="flex m-2 bg-yellow-400 p-1 rounded-md border-4 border-yellow-600 focus:outline-none" onclick="triggerRelance3AZ()">Relance 3</button>
-                        <button class="flex m-2 bg-yellow-400 p-0.25 rounded-md border-4 border-yellow-600 focus:outline-none" onclick="triggerPhishAlert()">Phish Alert</button>
+                        <button class="flex m-2 bg-yellow-400 p-1 rounded-md border-4 border-yellow-600 focus:outline-none" onclick="triggerNRP1()">NRP1</button>
+                        <button class="flex m-2 bg-yellow-400 p-1 rounded-md border-4 border-yellow-600 focus:outline-none" onclick="triggerNRP2()">NRP2</button>
+                        <button class="flex m-2 bg-yellow-400 p-1 rounded-md border-4 border-yellow-600 focus:outline-none" onclick="triggerNRP3()">NRP3</button>
+                        <button class="flex m-2 bg-yellow-400 p-0.25 rounded-md border-4 border-yellow-600 focus:outline-none" onclick="triggerRelanceDemande(this)">Relance avec note</button>
+                        <button class="flex m-2 bg-yellow-400 p-0.25 rounded-md border-4 border-yellow-600 focus:outline-none" onclick="triggerRelanceDemande(this)">Relance sans note</button>
                         <!-- <button class="flex m-2 bg-yellow-400 p-1 rounded-md border-4 border-yellow-600"></button> -->
                     </div>
-                    
                 </div>
+
+                <!-- Worflow du ticket -->
+                <div class="flex bg-gray-300 bouton-area rounded-md mr-3 items-center justify-center">
+                    <div class="flex flex-col">
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="localisation">
+                            <label for="localisation">Localisation</label>
+                        </div>
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="téléphone">
+                            <label for="téléphone">Téléphone</label>
+                        </div>
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="poste">
+                            <label for="poste">Poste</label>
+                        </div>
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="cti">
+                            <label for="cti">CTI</label>
+                        </div>
+
+
+                        <button class="rounded-md border-4 border-green-600 bg-green-400 focus:outline-none" id="resetCheckbox" onclick="resetWorkflow()">Check</button>
+                    </div>
+                </div>
+                
                 <!-- Menu déroulant pour le choix du context -->
-                <div class="flex flex-wrap m-3 p-3">
-                    <form>
+                <div class="flex flex-wrap w-screen justify-between items-center">
+                    <form class="ml-3 ">
                         <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="selectContextWindow(this)">
                         </select>
                     </form>
+                    <button class="flex m-2 bg-gray-500 p-1 rounded-md border-4 border-black focus:outline-none" onclick="alfrescoRelance()">Relance</button>
+                    <button class="flex m-2 bg-gray-500 p-1 rounded-md border-4 border-black focus:outline-none" onclick="alfrescoEscalade()">Escalade</button>
                 </div>
+
+                
             </div>
         </div>  
     </div>

@@ -10,79 +10,32 @@
 
 </head>
 <body class="bg-gray-100">
-    <div class="flex flex-col w-screen h-screen">
-        <!-- barre de navigation -->
-        <div class="flex flex-wrap nav-height">
-            <!-- Placement du logo -->
-            <div class="bg-blue-400 w-screen h-100">
-                <img class="m-3"src=""/>
-            </div>
-        </div>  
-        <!-- corps de l'application -->
-        <div class="flex flex-wrap w-screen main-height bg-gray-400">
-            <div class="flex flex-wrap w-screen">
-                <!-- date d'expiration -->
-                <div class="flex flex-wrap w-screen p-3 content-center justify-center">
-                    <!-- timer antargaz -->
-                    <div class="flex flex-col w-15 flex-col p-3">
-                        <label for="start">Antargaz</label>
-                        <input type="date" id="start" name="trip-start"
-                        value="2021-03-15"
-                        min="2021-03-15" max="2099-12-31">
-                        <button id="timerAZ" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
-                    </div>
-                    <!-- Timer Antargaz ADM -->
-                    <div class="flex flex-col w-15 flex-col p-3">
-                        <label for="start">Antargaz ADM</label>
-                        <input type="date" id="start" name="trip-start"
-                        value="2021-03-15"
-                        min="2021-03-15" max="2099-12-31">
-                        <button id="timerAZADM" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
-                    </div>
-                    <!-- Timer Proxiserve -->
-                    <div class="flex flex-col w-15 flex-col p-3">
-                        <label for="start">Proxiserve</label>
-                        <input type="date" id="start" name="trip-start"
-                        value="2021-03-15"
-                        min="2021-03-15" max="2099-12-31">
-                        <button id="timerPXS" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
-                    </div>
-                    <!-- Timer AEP -->
-                    <div class="flex flex-col w-15 flex-col p-3">
-                        <label for="start">AEP</label>
-                        <input type="date" id="start" name="trip-start"
-                        value="2021-03-15"
-                        min="2021-03-15" max="2099-12-31">
-                        <button id="timerAEP" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
-                    </div>
-                    <!-- Timer FDP -->
-                    <div class="flex flex-col w-15 flex-col p-3">
-                        <label for="start">FDP</label>
-                        <input type="date" id="start" name="trip-start"
-                        value="2021-03-15"
-                        min="2021-03-15" max="2099-12-31">
-                        <button id="timerFDP" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
-                    </div>
-                    <!-- Timer Pasteur -->
-                    <div class="flex flex-col w-15 flex-col p-3">
-                        <label for="start">Pasteur</label>
-                        <input type="date" id="start" name="trip-start"
-                        value="2021-03-15"
-                        min="2021-03-15" max="2099-12-31">
-                        <button id="timerPasteur" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer(this.id)">Reset</button>
-                    </div>
+       
+        <div class="flex flex-col w-screen h-screen">
+            <!-- barre de navigation -->
+            <div class="flex flex-wrap nav-height">
+                <!-- Placement du logo -->
+                <div class="bg-gray-200 w-screen h-100">
+                    <img class="mx-3"src="../img/sdhelper.png"/>
                 </div>
-                
-                <!-- Menu déroulant pour le choix du context -->
-                <div class="flex flex-wrap m-3 p-3">
-                    <form>
-                        <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="selectContextWindow(this)">
-                        </select>
-                    </form>
+                <!-- Numéro de version -->
+                <p>V1.1.4</p>
+            </div>
+            <!-- corps de l'application -->
+            <div class="flex flex-wrap w-screen main-height bg-gray-400 items-center">
+                <div class="flex flex-wrap items-center">
+                    <img src="../img/WIP.png">
                 </div>
             </div>
-        </div>  
-    </div>
+            <div class="flex flex-wrap w-screen main-height bg-gray-400">
+                    <div class="flex flex-wrap m-3 p-3">
+                        <form>
+                            <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="selectContextWindow(this)">
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>  
     <script src = "../js/workspace.js" ></script>
     <script src = "../js/workspaces/mainpage.js"></script>
 </body>

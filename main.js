@@ -1,26 +1,34 @@
+require('dotenv').config()
+const { shell } = require('electron')
 const { app, BrowserWindow } = require('electron')
 const remote = require('electron').remote;
 const path = require('path');
+require('update-electron-app')({
+  repo: 'Driftminder/sdhelper',
+  updateInterval: '1 hour',
+  logger: require('electron-log')
+})
+
+
+// console.log(process.env);
 
 
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 440,
+    width: 700,
     height: 630,
+    icon:"img/icon.ico",
     webPreferences: {
       // Preload des header
       preload: path.join(app.getAppPath(), 'js/preload/index.js')
     },
   })
-//   win.removeMenu()
+  // win.removeMenu()
   win.loadFile('indexes/index.html')
-  // win.setMaximumSize(440, 630);
+  // win.setMaximumSize(700, 630);
 
 }
-
-
-
 
 app.whenReady().then(createWindow)
 
@@ -39,6 +47,10 @@ app.on('activate', () => {
   }
 })
 
+
 try{
     require('electron-reloader')(module)
 }catch(_){}
+
+
+

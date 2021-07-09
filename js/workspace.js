@@ -55,3 +55,16 @@ function selectContextWindow($event){
     }
 }
 
+
+
+function triggerNRP1(){
+    window.api.send("copyToClipboard", "APPEL SORTANT 1 / NRP / MEVO / MAIL");
+}
+
+function triggerNRP2(){
+    window.api.send("copyToClipboard", "APPEL SORTANT 2 / NRP / MEVO / MAIL");
+}
+
+function triggerNRP3(){
+    window.api.send("copyToClipboard", "APPEL SORTANT 3 / NRP / MEVO / MAIL");
+}

@@ -1,0 +1,30 @@
+<div class="flex flex-wrap w-screen main-height bg-gray-400">
+    <div class="flex flex-wrap w-screen">
+        <!-- date d'expiration -->
+        <div class="flex flex-wrap w-screen p-3 content-center justify-center">
+            <!-- timer antargaz -->
+            <div>
+                <button id="timerAZ" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimer('cef1f3f8-cea1-5a6c-b7f8-b2930a2e76ae')">Reset</button>
+            </div>
+            <!-- Timer Antargaz ADM -->
+                <button id="timerAZADM" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimerAZADM()">Reset</button>
+            </div>
+            <!-- Timer Proxiserve -->
+            <div class="flex flex-col w-15 flex-col p-3">
+                <button id="timerPXS" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimerPXS()">Reset</button>
+            </div>
+            <!-- Timer AEP -->
+            <div class="flex flex-col w-15 flex-col p-3">
+                <button id="timerAEP" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="resetTimerAEP()">Reset</button>
+            </div>
+        </div>
+        
+        <!-- Menu déroulant pour le choix du context -->
+        <div class="flex flex-wrap m-3 p-3">
+            <form>
+                <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="selectContextWindow(this)">
+                </select>
+            </form>
+        </div>
+    </div>
+</div>  

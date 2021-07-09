@@ -12,22 +12,24 @@
 <body class="bg-gray-100">
     <div class="flex flex-col w-screen h-screen">
         <!-- barre de navigation -->
-        <div class="flex flex-wrap nav-height">
+        <div class="flex flex-wrap justify-between nav-height bg-red-400 items-center">
             <!-- Placement du logo -->
-            <div class="bg-red-400 w-1/3 h-100">
-                <img class="m-3"src="img/az.png"/>
+            <div class="ml-3 h-100">
+                <img src="../img/FDJ.png"/>
             </div>
-            <!-- Choix de l'option tel ou mail -->
-            <div class="flex flex-wrap justify-center content-center bg-red-400 w-1/3 h-100">
-            </div>    
+            <!-- Téléphone du contexte -->
+            <div class="bg-gray-200 rounded-md h-100 p-1">
+                <p>Téléphone : 01.41.28.84.31</p>
+            </div>
+               
             <!-- Bouton ticket pour créer le template pour le ticket -->
-            <div class="flex flex-wrap justify-center content-center bg-red-400 w-1/3 h-100"> 
+            <div class="mr-3 h-100"> 
                 <button class="bg-white p-1 rounded-md border-4 focus:outline-none active:bg-gray-300 border-red-600" onclick="generateTicket()">Ticket</button>
              </div>
         </div>  
         <!-- corps de l'application -->
         <div class="flex flex-wrap w-screen main-height bg-gray-400">
-            <div class="flex flex-wrap w-screen">
+            <div class="flex flex-wrap w-screen justify-between">
                 <!-- Zone de texte type post-it -->
                 <div class="flex flex-col h-100 w-50 justify-center content-center m-5"> 
                     <form> 
@@ -36,22 +38,73 @@
                     </form>
                 </div>
                 <!-- Bouton multiple pour les templates lié au contexte -->
-                <div class="flex flex-wrap bouton-area bg-gray-300 rounded-md">
+                <div class="flex flex-wrap bouton-area bg-gray-300 rounded-md mr-3">
                     <div class="flex flex-wrap justify-center content-center ">
+                        <button class="flex m-2 bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none" onclick="triggerNRP1()">NRP1</button>
+                        <button class="flex m-2 bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none" onclick="triggerNRP2()">NRP2</button>
+                        <button class="flex m-2 bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none" onclick="triggerNRP3()">NRP3</button>
                         <button class="flex m-2 bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none" onclick="triggerRelance1FDP()">Relance 1</button>
                         <button class="flex m-2 bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none" onclick="triggerRelance2FDP()">Relance 2</button>
                         <button class="flex m-2 bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none" onclick="triggerRelance3FDP()">Relance 3</button>
                         <button class="flex m-2 bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none" onclick="triggerResolvingComment()">Résolution</button>
                         <button class="flex m-2 bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none" onclick="triggerOOS()">Hors-périmètre</button>
+                        
                     </div>
-                    
+
                 </div>
+                <!-- Worflow du ticket -->
+                <div class="flex bg-gray-300 bouton-area rounded-md mr-3 items-center justify-center">
+                    <div class="flex flex-col">
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="reportedBy">
+                            <label for="reportedBy">Reported By</label>
+                        </div>
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="téléphone">
+                            <label for="téléphone">Téléphone</label>
+                        </div>
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="idMateriel">
+                            <label for="idMateriel">Poste / S.N.</label>
+                        </div>
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="akheo">
+                            <label for="akheo">Reférence CCRV</label>
+                        </div>
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="workNote">
+                            <label for="workNote">Journal de note</label>
+                        </div>
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="ciPosteMateriel">
+                            <label for="ciPosteMateriel">CI : Matériel / Logiciel</label>
+                        </div>
+
+                        <div class="my-2 flex flex-wrap items-center">
+                            <input type="checkbox" id="pièceJointe">
+                            <label for="pièceJointe">Pièce Jointe</label>
+                        </div>
+
+                        <button class="rounded-md border-4 border-green-600 bg-green-400 focus:outline-none" id="resetCheckbox" onclick="resetWorkflow()">Check</button>
+                    </div>
+                </div>
+                
                 <!-- Menu déroulant pour le choix du context -->
-                <div class="flex flex-wrap m-3 p-3">
-                    <form>
+                <div class="flex flex-wrap w-screen justify-between items-center">
+                    <form class="ml-3 ">
                         <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="selectContextWindow(this)">
                         </select>
                     </form>
+                    <button class="flex m-2 bg-gray-500 p-1 rounded-md border-4 border-black focus:outline-none" onclick="alfrescoCCRV()">CCRV</button>
+                    <button class="flex m-2 bg-gray-500 p-1 rounded-md border-4 border-black focus:outline-none" onclick="alfrescoEscalade()">Escalade</button>
+                    <button class="flex m-2 bg-gray-500 p-1 rounded-md border-4 border-black focus:outline-none" onclick="alfrescoRelanceSortante()">Relance Sortante</button>
+                    <button class="flex m-2 bg-gray-500 p-1 rounded-md border-4 border-black focus:outline-none" onclick="alfrescoRelanceEntrante()">Relance Entrante</button>
                 </div>
             </div>
         </div>  

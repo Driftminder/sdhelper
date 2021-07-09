@@ -1,29 +1,42 @@
 {
-  "name": "SDHelper",
-  "version": "1.0.2",
-  "description": "Test de l'appli",
+  "name": "sdhelper",
+  "version": "1.1.4",
+  "description": "Application de centralisation de template et d'information pour le plateau mutualisé du HelpDesk Econocom de Tours",
   "main": "main.js",
   "scripts": {
     "postinstall": "install-app-deps",
     "start": "electron .",
     "dist": "build",
-    "pack": "electron-builder"
+    "pack": "electron-builder",
+    "publish": "electron-updater"
   },
   "build": {
-    "appId": "HelperDesk",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Driftminder",
+        "repo": "sdhelper"
+      }
+    ],
+    "appId": "sdhelper",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "img/icon.ico"
     }
   },
   "keywords": [],
-  "author": "",
+  "author": "Guillaume Colombi",
   "license": "ISC",
   "devDependencies": {
     "electron": "^12.0.0",
     "electron-reloader": "^1.2.0",
+    "electron-packager": "^15.2.0",
     "electron-builder": "^22.10.5"
   },
   "dependencies": {
-    "jquery": "^3.6.0"
+    "dotenv": "^8.2.0",
+    "electron-log": "^4.3.5",
+    "jquery": "^3.6.0",
+    "update-electron-app": "^2.0.1"
   }
 }
