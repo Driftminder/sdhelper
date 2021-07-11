@@ -1,4 +1,5 @@
 require('dotenv').config()
+require('./database')
 const { shell } = require('electron')
 const { app, BrowserWindow } = require('electron')
 const remote = require('electron').remote;
@@ -20,6 +21,7 @@ function createWindow () {
     height: 630,
     icon:"img/icon.ico",
     webPreferences: {
+      nodeIntegration: true,
       // Preload des header
       preload: path.join(app.getAppPath(), 'js/preload/index.js')
     },

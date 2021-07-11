@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -48,7 +48,7 @@
                         <!-- Timer AEP ECO2-->
                         <div class="ml-3 h-100 justify-between">
                             <label>Timer AEP ECO2</label>
-                            <button id="timerAEP2" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="updateAEPECO2Timer()">Reset</button>
+                            <button id="timerAEP" class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="updateAEPECO2Timer()">Reset</button>
                         </div>
                         
                         <!-- Menu déroulant pour le choix du context -->
@@ -60,12 +60,44 @@
                         </div>  
 
                     </div>
-                    
-                    
+
+
+                    <!-- Section de l'affichage des timers -->
+                    <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
+                        <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
+                            <div class="ml-3 h-100 justify-between">
+                                <label>AZ Expiration : <p id="currentAZTimer"></p></label>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
+                            <div class="ml-3 h-100 justify-between">
+                                <label>AZADM Expiration : <p id="currentAZTimer"></p></label>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
+                            <div class="ml-3 h-100 justify-between">
+                                <label>PXS Expiration : <p class="currentAZTimer"></p></label>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
+                            <div class="ml-3 h-100 justify-between">
+                                <label>AEP ECO1 : <p class="currentAZTimer"></p></label>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
+                            <div class="ml-3 h-100 justify-between">
+                                <label>AEP ECO2 : <p class="currentAZTimer"></p></label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
     <script src = "../js/workspace.js" ></script>
     <script src = "../js/workspaces/mainpage.js"></script>
-    <script></script>
+    <script src="../js/workspaces/mainpage.js"></script>
 </body>
 </html>

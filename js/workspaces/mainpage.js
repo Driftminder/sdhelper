@@ -1,42 +1,66 @@
-function resetTimerAZ(){
+function formattedDate(d = new Date) {
+    var newDate = [d.getDate(), d.getMonth()+4, d.getFullYear()]
+        .map(n => n < 10 ? `0${n}` : `${n}`).join('/');
+        return newDate;
+  }
+newDateAZ = formattedDate();
+console.log(newDateAZ);
 
-    window.api.send("resetTimer", `${newDateAZ}`)
+// function updateAZTimer($event){
+//     var timer = formattedDate();
+//     window.api.send('insertAZTimer', timer);
+// }
+
+function sendTrigram($event){
+    var trigram = document.getElementById("techTrigrame").value != "" ? document.getElementById("techTrigrame").value : "XXX"
+    window.api.send("updateTrigram", trigram)
 }
 
-function resetTimerFDP(){
-
-    window.api.send("resetTimer", `${newDateFDP}`)
+function updateAZADMTimer($event){
+    var timer = formattedDate();
+    window.api.send('insertAZADMTimer', timer);
 }
 
-function resetTimerPasteur(){
-
-    window.api.send("resetTimer", `${newDatePasteur}`)
+function updatePXSTimer($event){
+    var timer = formattedDate();
+    window.api.send('insertPXSTimer', timer);
 }
 
-function resetTimerAEP(){
-
-    window.api.send("resetTimer", `${newDateAEP}`)
+function updateAEPECO1Timer($event){
+    var timer = formattedDate();
+    window.api.send('insertAEPECO1Timer', timer);
 }
 
-function resetTimerPXS(){
-    
-
-    window.api.send("resetTimer", `${newDatePXS}`, )
+function updateAEPECO2Timer($event){
+    var timer = formattedDate();
+    window.api.send('insertAEPECO2Timer', timer);
 }
 
-function resetTimerAZADM(){
-    
-    window.api.send("resetTimer", "AZADM")
+function updateAZTimer($event){
+    var timer = formattedDate();
+    window.api.send('insertAZTimer', timer);
 }
 
-function resetTimer(clientID) {
-    window.api.send("resetTimer", clientID);
-}
+window.api.on("getTrigram", (trigram) => {
+    document.getElementById("postIt").innerHTML= trigram;
+})
 
-// function formattedDate(d = new Date) {
-    //     var newDate = [d.getDate(), d.getMonth()+4, d.getFullYear()]
-    //         .map(n => n < 10 ? `0${n}` : `${n}`).join('/');
-    //         return newDate;
-    //   }
-    //  newDateAZ = formattedDate();
-    //  console.log(newDatePXS);
+window.api.on('getAZTimer', (timerAZ) => {
+    document.getElementById("currentAZTimer").innerHTML = timerAZ;
+})
+
+window.api.on('getAZADMTimer', (timerAZADM) => {
+    document.getElementById("currentAZADMTimer").innerHTML = timerAZADM;
+})
+
+window.api.on('getPXSTimer', (timerPXS) => {
+    document.getElementById("currentPXSTimer").innerHTML = timerPXS;
+})
+
+window.api.on('getAEPECO1Timer', (timerAEPECO1) => {
+    document.getElementById("currentAEPECO1Timer").innerHTML = timerAEPECO1;
+})
+
+window.api.on('getAEPECO2Timer', (timerAEPECO2) => {
+    document.getElementById("currentAEPECP2Timer").innerHTML = timerAEPECO2;
+})

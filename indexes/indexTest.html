@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HelperDesk</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="../css/tailwind.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+
+</head>
+<body class="bg-gray-100">
+       
+        <div class="flex flex-col w-screen h-screen">
+            <!-- barre de navigation -->
+            <div class="flex flex-wrap nav-height">
+                <!-- Placement du logo -->
+                <div class="bg-gray-200 w-screen h-100">
+                    <img class="mx-3"src="../img/sdhelper.png"/>
+                </div>
+                <!-- Numéro de version -->
+                <p>V1.1.5</p>
+            </div>
+            <!-- corps de l'application -->
+            <div class="flex flex-wrap w-screen main-height bg-gray-400 items-center">
+                <div class="flex flex-wrap items-center">
+                    <input class="mr-3 focus:outline-none" type="text" id="techTrigrame" value="" size="3">
+                    <button class="mr-3 bg-white p-1 rounded-md border-4 focus:outline-none active:bg-gray-300 border-blue-600" onclick="sendTrigram()">Contact</button>
+                </div>
+            </div>
+            <div class="flex flex-wrap w-screen main-height bg-gray-400">
+                    <div class="flex flex-wrap m-3 p-3">
+                        <form>
+                            <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="selectContextWindow(this)">
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>  
+    <script src = "../js/workspace.js" ></script>
+    <script src = "../js/workspaces/mainpage.js"></script>
+</body>
+</html>
