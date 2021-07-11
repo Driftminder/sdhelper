@@ -1,26 +1,32 @@
 const context = {
-    MAIN: 0,
+    MAIN:0,
     FDP: 1,
     ANTARGAZ: 2,
     PROXISERVE: 3,
     PASTEUR: 4,
     EPV: 5,
-    AEP: 6
-
+    AEP: 6,
+    INFO: 7
 }
 
 Object.keys(context).forEach(key => {
-    console.log(key);
+    //console.log(key);
     var option = document.createElement('option')
     option.innerHTML = key
     option.value = context[key]
     document.getElementById("windowSwitch").appendChild(option)
 });
 
-function clearContents() {
-    console.log("clear");
-    document.getElementById("postIt").innerHTML="";
-}
+
+    // console.log("clear");
+    // var placeholder = "test"
+    // document.getElementById("postIt").innerHTML= placeholder;
+
+
+
+
+
+
 
 function selectContextWindow($event){
     console.log($event.value)
@@ -50,8 +56,11 @@ function selectContextWindow($event){
             window.api.send("changeContext", "aepIndex.html")
             break;
 
-        case context.MAIN:
-            window.api.send("changeContext", "index.html")
+        // case context.MAIN:
+        //     window.api.send("changeContext", "index.html")
+
+        case context.INFO:
+            window.api.send("changeContext", "infoIndex.html")
     }
 }
 
