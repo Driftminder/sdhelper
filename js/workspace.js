@@ -1,3 +1,4 @@
+
 const context = {
     MAIN:0,
     FDP: 1,
@@ -16,16 +17,6 @@ Object.keys(context).forEach(key => {
     option.value = context[key]
     document.getElementById("windowSwitch").appendChild(option)
 });
-
-
-    // console.log("clear");
-    // var placeholder = "test"
-    // document.getElementById("postIt").innerHTML= placeholder;
-
-
-
-
-
 
 
 function selectContextWindow($event){
@@ -56,9 +47,6 @@ function selectContextWindow($event){
             window.api.send("changeContext", "aepIndex.html")
             break;
 
-        // case context.MAIN:
-        //     window.api.send("changeContext", "index.html")
-
         case context.INFO:
             window.api.send("changeContext", "infoIndex.html")
     }
@@ -76,4 +64,52 @@ function triggerNRP2(){
 
 function triggerNRP3(){
     window.api.send("copyToClipboard", "APPEL SORTANT 3 / NRP / MEVO / MAIL");
+}
+
+function noteSavingAZ(){
+    
+    var note = document.getElementById("postIt").value
+
+    window.api.send("noteSavingAZ", note)
+    
+}
+
+function noteSavingAEP(){
+    
+    var note = document.getElementById("postIt").value
+
+    window.api.send("noteSavingAEP", note)
+    
+}
+
+function noteSavingFDP(){
+    
+    var note = document.getElementById("postIt").value
+
+    window.api.send("noteSavingFDP", note)
+    
+}
+
+function noteSavingPasteur(){
+    
+    var note = document.getElementById("postIt").value
+
+    window.api.send("noteSavingPasteur", note)
+    
+}
+
+function noteSavingEPV(){
+    
+    var note = document.getElementById("postIt").value
+
+    window.api.send("noteSavingEPV", note)
+    
+}
+
+function noteSavingPXS(){
+    
+    var note = document.getElementById("postIt").value
+
+    window.api.send("noteSavingPXS", note)
+    
 }

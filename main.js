@@ -1,6 +1,6 @@
 require('dotenv').config()
 require('./database')
-const { shell } = require('electron')
+const { shell, ipcMain } = require('electron')
 const { app, BrowserWindow } = require('electron')
 const remote = require('electron').remote;
 const path = require('path');
@@ -13,7 +13,7 @@ require('update-electron-app')({
 
 // console.log(process.env);
 
-
+let win;
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -21,9 +21,10 @@ function createWindow () {
     height: 630,
     icon:"img/icon.ico",
     webPreferences: {
-      nodeIntegration: true,
+      nodeIntegration: false,
+      contextIsolation: true,
       // Preload des header
-      preload: path.join(app.getAppPath(), 'js/preload/index.js')
+      preload: path.join(__dirname, 'preload.js')
     },
   })
   // win.removeMenu()
@@ -55,4 +56,9 @@ try{
 }catch(_){}
 
 
-
+ipcMain.on("toMain", (event) => {
+    var responseObj = "Ceci est un nouveau jour"
+    console.log("iPC main Test")
+    win.webContents.send("fromMain", responseObj);
+  
+});

@@ -5,8 +5,11 @@ const clipboard = electron.clipboard;
 const shell = electron.shell;
 const { ipcMain, BrowserWindow, remote, ipcRenderer } = require('electron')
 
+const locationNote = path.join(__dirname + '/../../extraResources/');
+const locationTech = path.join(__dirname + '/../../extraResources/');
 
-const location = path.join(__dirname, '')
+
+
 
 
 
@@ -30,7 +33,7 @@ ipcMain.on('updateTrigram', (event, arg) =>{
 
     obj.trigram = arg;
 
-    db.insertTableContent('tech', location, obj, (succ, msg) => {
+    db.insertTableContent('tech', locationTech, obj, (succ, msg) => {
             console.log("Successfuly:" + succ);
             console.log("Message: " + msg);
     })
@@ -39,7 +42,7 @@ ipcMain.on('updateTrigram', (event, arg) =>{
 ipcMain.on('insertAZTimer', (event, arg) => {
     console.log(arg + " AZ")
     let where = {
-        "id": 1626041533875
+        "settings": "settings"
     }
     
     let set = { 
@@ -49,7 +52,7 @@ ipcMain.on('insertAZTimer', (event, arg) => {
     // console.log(arg)
     // console.log(location)
     
-    db.updateRow('tech', location, where, set, (succ, msg) => {
+    db.updateRow('tech', locationTech, where, set, (succ, msg) => {
         // succ - boolean, tells if the call is successful
         console.log("Success: " + succ);
         console.log("Message: " + msg);
@@ -60,17 +63,15 @@ ipcMain.on('insertAZTimer', (event, arg) => {
 ipcMain.on('insertAZADMTimer', (event, arg) => {
     console.log(arg + " azdm")
     let where = {
-        "id": 1626041533875
+        "settings": "settings"
     }
     
     let set = { 
         "timerAZADM": arg
     }
 
-    // console.log(arg)
-    // console.log(location)
     
-    db.updateRow('tech', location, where, set, (succ, msg) => {
+    db.updateRow('tech', locationTech, where, set, (succ, msg) => {
         // succ - boolean, tells if the call is successful
         console.log("Success: " + succ);
         console.log("Message: " + msg);
@@ -82,7 +83,7 @@ ipcMain.on('insertAZADMTimer', (event, arg) => {
 ipcMain.on('insertPXSTimer', (event, arg) => {
     console.log(arg + " PXS")
     let where = {
-        "id": 1626041533875
+        "settings": "settings"
     }
     
     let set = { 
@@ -92,7 +93,7 @@ ipcMain.on('insertPXSTimer', (event, arg) => {
     // console.log(arg)
     // console.log(location)
     
-    db.updateRow('tech', location, where, set, (succ, msg) => {
+    db.updateRow('tech', locationTech, where, set, (succ, msg) => {
         // succ - boolean, tells if the call is successful
         console.log("Success: " + succ);
         console.log("Message: " + msg);
@@ -104,7 +105,7 @@ ipcMain.on('insertPXSTimer', (event, arg) => {
 ipcMain.on('insertAEPECO1Timer', (event, arg) => {
     console.log(arg + " AEP ECO1")
     let where = {
-        "id": 1626041533875
+        "settings": "settings"
     }
     
     let set = { 
@@ -114,7 +115,7 @@ ipcMain.on('insertAEPECO1Timer', (event, arg) => {
     // console.log(arg)
     // console.log(location)
     
-    db.updateRow('tech', location, where, set, (succ, msg) => {
+    db.updateRow('tech', locationTech, where, set, (succ, msg) => {
         // succ - boolean, tells if the call is successful
         console.log("Success: " + succ);
         console.log("Message: " + msg);
@@ -125,7 +126,7 @@ ipcMain.on('insertAEPECO1Timer', (event, arg) => {
 ipcMain.on('insertAEPECO2Timer', (event, arg) => {
     console.log(arg + "AEP ECO2")
     let where = {
-        "id": 1626041533875
+        "settings": "settings"
     }
     
     let set = { 
@@ -135,7 +136,7 @@ ipcMain.on('insertAEPECO2Timer', (event, arg) => {
     // console.log(arg)
     // console.log(location)
     
-    db.updateRow('tech', location, where, set, (succ, msg) => {
+    db.updateRow('tech', locationTech, where, set, (succ, msg) => {
         // succ - boolean, tells if the call is successful
         console.log("Success: " + succ);
         console.log("Message: " + msg);
@@ -155,4 +156,100 @@ ipcMain.on('navigateur', (event, arg) =>{
     console.log(arg);
     var lien = arg
     return shell.openExternal(lien);
+})
+
+ipcMain.on('noteSavingPasteur', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+    
+    let set = { 
+        "notePasteur": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('noteSavingAZ', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+    
+    let set = { 
+        "noteAZ": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('noteSavingPXS', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+    
+    let set = { 
+        "notePXS": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('noteSavingFDP', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+    
+    let set = { 
+        "noteFDP": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('noteSavingEPV', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+    
+    let set = { 
+        "noteEPV": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('noteSavingAEP', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+    
+    let set = { 
+        "noteAEP": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
 })

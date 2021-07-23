@@ -57,3 +57,4 @@ function resetWorkflow(){
 function helperAlert(){
     window.alert("Pas de nouvelle information.")
 }
+

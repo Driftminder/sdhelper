@@ -22,3 +22,4 @@ function resetWorkflow(){
     document.getElementById('pièceJointe').checked = false;
     
 }
+

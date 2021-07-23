@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>HelperDesk</title>
+    <title>info</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="../css/tailwind.min.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -10,10 +10,11 @@
 
 </head>
 <body class="bg-gray-100">
-       
+
         <div class="flex flex-col w-screen h-screen">
             <!-- barre de navigation -->
             <div class="flex flex-wrap nav-height">
+                <p id="identifiantPage" class="hidden">info</p>
                 <!-- Placement du logo -->
                 <div class="bg-gray-200 w-screen h-100">
                     <img class="mx-3"src="../img/sdhelper.png"/>
@@ -61,7 +62,7 @@
 
                     </div>
 
-
+                    
                     <!-- Section de l'affichage des timers -->
                     <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
                         <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
@@ -72,25 +73,25 @@
                         
                         <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
                             <div class="ml-3 h-100 justify-between">
-                                <label>AZADM Expiration : <p id="currentAZTimer"></p></label>
+                                <label>AZADM Expiration : <p id="currentAZADMTimer"></p></label>
                             </div>
                         </div>
 
                         <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
                             <div class="ml-3 h-100 justify-between">
-                                <label>PXS Expiration : <p class="currentAZTimer"></p></label>
+                                <label>PXS Expiration : <p id="currentPXSTimer"></p></label>
                             </div>
                         </div>
 
                         <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
                             <div class="ml-3 h-100 justify-between">
-                                <label>AEP ECO1 : <p class="currentAZTimer"></p></label>
+                                <label>AEP ECO1 : <p id="currentAEPECO1Timer"></p></label>
                             </div>
                         </div>
 
                         <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
                             <div class="ml-3 h-100 justify-between">
-                                <label>AEP ECO2 : <p class="currentAZTimer"></p></label>
+                                <label>AEP ECO2 : <p id="currentAEPECO2Timer"></p></label>
                             </div>
                         </div>
                     </div>
