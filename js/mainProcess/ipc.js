@@ -5,13 +5,8 @@ const clipboard = electron.clipboard;
 const shell = electron.shell;
 const { ipcMain, BrowserWindow, remote, ipcRenderer } = require('electron')
 
-const locationNote = path.join(__dirname + '/../../extraResources/');
-const locationTech = path.join(__dirname + '/../../extraResources/');
-
-
-
-
-
+const locationNote = path.join(__dirname, 'db');
+const locationTech = path.join(__dirname, 'db');
 
 
 

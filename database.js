@@ -1,7 +1,8 @@
 const db = require('electron-db');
 const path = require('path');
-const locationNote = path.join(path.dirname(__dirname), 'extraResources', 'note.json');
-const locationTech = path.join(path.dirname(__dirname), 'extraResources', 'tech.json');
+const locationNote = path.join(__dirname, 'js','mainProcess', 'db');
+const locationTech = path.join(__dirname, 'js','mainProcess', 'db');
+
 
 function createTechSetting(){
 

@@ -11,26 +11,7 @@
   },
   "build": {
     "appId": "sdhelper",
-    "files": [
-      "main.js",
-      "preload.js",
-      "database.js",
-      "node_modules",
-      "js/",
-      "indexes/",
-      "img/",
-      "css/"
-    ],
-    "extraResources": [
-      {
-        "from": "./js/mainProcess/db",
-        "to": "extraResources",
-        "filter": [
-          "**/*"
-        ]
-      }
-
-    ],
+    "asar": false,
     "win": {
       "target": "nsis",
       "icon": "img/icon.ico"
