@@ -248,3 +248,113 @@ ipcMain.on('noteSavingAEP', (event, note) => {
         console.log("Message: " + msg);
       });
 })
+
+// ----------------------------------------------------------------------------------------
+
+ipcMain.on('deleteNoteFDP', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+
+    note = ""
+    
+    let set = { 
+        "noteFDP": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('deleteNotePXS', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+
+    note = ""
+    
+    let set = { 
+        "notePXS": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('deleteNoteAEP', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+
+    note = ""
+    
+    let set = { 
+        "noteAEP": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('deleteNoteEPV', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+
+    note = ""
+    
+    let set = { 
+        "noteEPV": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('deleteNoteAZ', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+
+    note = ""
+    
+    let set = { 
+        "noteAZ": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})
+
+ipcMain.on('deleteNotePasteur', (event, note) => {
+    let where = {
+        "tableNote": "tableNote"
+    }
+
+    note = ""
+    
+    let set = { 
+        "notePasteur": note
+    }
+
+    db.updateRow('note', locationNote, where, set, (succ, msg) => {
+       
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})

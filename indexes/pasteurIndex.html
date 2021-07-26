@@ -33,7 +33,7 @@
                     <form> 
                         <textarea placeholder="Ajoutez de notes ici" class="focus:outline-none text-area rezine:none rounded-md border-4 shadow-xl" id="postIt" name="rappeltout" row="50" cols="20"></textarea>
                         <div class="flex flex-wrap">
-                            <input type="reset" class="flex bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none justify-center" value="Clear">
+                            <input type="reset" onclick="deleteNotePasteur()" class="flex bg-red-400 p-1 rounded-md border-4 border-red-600 focus:outline-none justify-center" value="Clear">
                             <button onclick="noteSavingPasteur()" id="save" class="flex m-2  bg-green-400 p-1 rounded-md border-4 border-green-600 focus:outline-none justify-center">Sauvegarder</button>
                         </div>
                     </form>

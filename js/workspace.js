@@ -113,3 +113,40 @@ function noteSavingPXS(){
     window.api.send("noteSavingPXS", note)
     
 }
+
+function deleteNoteFDP(){
+    document.getElementById("postIt").innerHTML = ""
+    window.api.send("deleteNoteFDP", "")
+    
+}
+
+function deleteNotePXS(){
+    document.getElementById("postIt").innerHTML = ""
+    window.api.send("deleteNotePXS", "")
+    
+}
+
+function deleteNoteEPV(){
+    document.getElementById("postIt").innerHTML = ""
+    window.api.send("deleteNoteEPV", "")
+    
+}
+
+function deleteNoteAEP(){
+    document.getElementById("postIt").innerHTML = ""
+    window.api.send("deleteNoteAEP", "")
+    
+}
+
+function deleteNoteAZ(){
+    document.getElementById("postIt").innerHTML = ""
+    window.api.send("deleteNoteAZ", "")
+    
+}
+
+function deleteNotePasteur(){
+    document.getElementById("postIt").innerHTML = ""
+    window.api.send("deleteNotePasteur", "")
+    
+}
+

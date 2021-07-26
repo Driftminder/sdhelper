@@ -6,7 +6,7 @@ const {
 contextBridge.exposeInMainWorld(
     "api",{
         send: (channel, data) => {
-            let validChannels = ['copyToClipboard', 'changeContext', 'insertAZTimer', 'navigateur', 'updateTrigram', 'insertAZADMTimer', 'insertPXSTimer', 'insertAEPECO1Timer', 'insertAEPECO2Timer', 'loadingTimer', 'noteSavingPasteur', 'noteSavingAZ', 'noteSavingFDP', 'noteSavingAEP', 'noteSavingEPV', 'noteSavingPXS', ];
+            let validChannels = ['copyToClipboard', 'changeContext', 'insertAZTimer', 'navigateur', 'updateTrigram', 'insertAZADMTimer', 'insertPXSTimer', 'insertAEPECO1Timer', 'insertAEPECO2Timer', 'loadingTimer', 'noteSavingPasteur', 'noteSavingAZ', 'noteSavingFDP', 'noteSavingAEP', 'noteSavingEPV', 'noteSavingPXS', 'deleteNoteAZ', 'deleteNoteAEP', 'deleteNoteEPV', 'deleteNoteFDP', 'deleteNotePXS', 'deleteNotePasteur' ];
             if(validChannels.includes(channel)){
                 ipcRenderer.send(channel, data);
             }
