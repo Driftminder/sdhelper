@@ -57,6 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
          case("AZ"):
             db.getField('tech', locationTech, keyTrigram, (succ, data) => {
                 var arg = data.toString()
+                console.log(arg)
                 document.getElementById('techTrigrame').value=arg
             })
             db.getField('note', locationNote, keyNoteAZ, (succ, data) => {
