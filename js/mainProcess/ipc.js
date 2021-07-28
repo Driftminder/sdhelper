@@ -24,14 +24,22 @@ ipcMain.on('copyToClipboard', (event, arg) =>{
 
 ipcMain.on('updateTrigram', (event, arg) =>{
     
-    let obj = new Object();
+    let where = {
+        "settings": "settings"
+    }
+    
+    let set = { 
+        "trigram": arg
+    }
 
-    obj.trigram = arg;
-
-    db.insertTableContent('tech', locationTech, obj, (succ, msg) => {
-            console.log("Successfuly:" + succ);
-            console.log("Message: " + msg);
-    })
+    // console.log(arg)
+    // console.log(location)
+    
+    db.updateRow('tech', locationTech, where, set, (succ, msg) => {
+        // succ - boolean, tells if the call is successful
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
 })
 
 ipcMain.on('insertAZTimer', (event, arg) => {

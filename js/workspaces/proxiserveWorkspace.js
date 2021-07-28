@@ -34,7 +34,7 @@ function triggerResolve(){
     window.api.send("copyToClipboard","Bonjour,\n\nLe Service Desk a tenté de vous joindre à de multiples reprises sans succès.\n\nN'ayant pas eu de réponse à nos relances précédentes, le dossier sera  clôturé\n\nCordialement, \n\nXXXXXX\n\nService Desk Proxiserve\n\n01.69.18.67.82");
 }
 
-function triggerNoDate(){
+function triggerNoData(){
     window.api.send("copyToClipboard","Ticket erroné car incomplet.  Non exploitable en l'état.\n\nMerci d'en rouvrir un nouveau si nécessaire.\n\nCordialement, le support Econocom");
 }
 

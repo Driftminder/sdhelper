@@ -49,27 +49,10 @@ function generateContact(){
             break;
         case modes.MAIL:
             readableMode = "MAIL"
+            contactAppel = "MAIL"
             break;
     }
     window.api.send("copyToClipboard", `PAC ${name} le ${date} à ${time} ${readableMode}\n[${contactAppel} ENTRANT]\n\n------------------------`);
-}
-
-function incomingCall(){
-    var name = document.getElementById("techTrigrame").value != "" ? document.getElementById("techTrigrame").value : "XXX"
-    var fulldate = new Date(Date.now()).toLocaleString().split(", ")
-    var date = fulldate[0]
-    var time = fulldate[1].split(":")[0]+":"+fulldate[1].split(":")[1]
-    var readableMode 
-    switch(selectedTicketMode){
-        case modes.TEL:
-            readableMode = "TEL"
-            break;
-        case modes.MAIL:
-            readableMode = "MAIL"
-            break;
-    }
-    window.api.send("copyToClipboard", `PAC ${name} le ${date} à ${time} ${readableMode}\n\n-------------------------`);
-
 }
 
 function triggerRelance1AZ(){

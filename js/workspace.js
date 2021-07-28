@@ -69,8 +69,11 @@ function triggerNRP3(){
 function noteSavingAZ(){
     
     var note = document.getElementById("postIt").value
+    var trig = document.getElementById("techTrigrame").value
+    console.log(trig)
 
     window.api.send("noteSavingAZ", note)
+    window.api.send("updateTrigram", trig)
     
 }
 
@@ -113,6 +116,8 @@ function noteSavingPXS(){
     window.api.send("noteSavingPXS", note)
     
 }
+
+//----------------------------------------------------------------------
 
 function deleteNoteFDP(){
     document.getElementById("postIt").innerHTML = ""

@@ -30,9 +30,9 @@ function triggerAccountNote(){
     window.api.send("copyToClipboard","[Journal de travail]\n\n\nCréation de compte AD : OK\nAjout du script de session : OK\nAjout des groupes : OK\nCréation du dossier personnel : OK\nCréation de l'adresse mail : OK");
 }
 
-function triggerPassword(){
-    window.api.send("copyToClipboard","Bonjour,\n\nVoici votre mot de passe provisoire pour votre compte AEP :\n\nMerci de vous connecter à Citrix via le lien que vous avez reçu par mail suite à la création de votre compte AEP afin de le modifier.\n\nCordialement,");
-}
+// function triggerPassword(){
+//     window.api.send("copyToClipboard","Bonjour,\n\nVoici votre mot de passe provisoire pour votre compte AEP :\n\nMerci de vous connecter à Citrix via le lien que vous avez reçu par mail suite à la création de votre compte AEP afin de le modifier.\n\nCordialement,");
+// }
 
 function triggerRedirection(){
     window.api.send("copyToClipboard","Mise en place de la redirection des mails AEP vers la boite mail BNP effectuée");
@@ -47,15 +47,15 @@ function triggerWorknote(){
 }
 
 function alfrescoRelanceEntrante(){
-    window.api.send("navigateur","https://ged.e2rsc.econocom.com/share/page/site/aep-aep/wiki-page?title=AEP_PRO_ITOP_Gestion_des_relances_entrantes");
+    window.api.send("navigateur","https://ged.e2rsc.econocom.com/share/page/site/aep-aep/wiki-page?title=[CONSIGNE]_Gestion_des_relances_entrantes_par_le_SD");
 }
 
 function alfrescoRelanceSortante(){
-    window.api.send("navigateur", "https://ged.e2rsc.econocom.com/share/page/site/aep-aep/wiki-page?title=AEP_PRO_ITOP_Gestion_des_relances_sortantes");
+    window.api.send("navigateur", "https://ged.e2rsc.econocom.com/share/page/site/aep-aep/wiki-page?title=[CONSIGNE]_Gestion_des_relances_sortantes_par_le_SD");
 }
 
 function alfrescoEscalade(){
-    window.api.send("navigateur", "https://ged.e2rsc.econocom.com/share/page/site/aep-aep/document-details?nodeRef=workspace://SpacesStore/6ade555a-e2d2-497b-aed4-0b371ac5e633");
+    window.api.send("navigateur", "https://ged.e2rsc.econocom.com/share/page/site/aep-aep/document-details?nodeRef=workspace://SpacesStore/85fbe113-54d3-4052-905f-a17bb4b194a9");
 }
 
 function helperAlert(){
