@@ -24,6 +24,7 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: true,
+      devTools: true,
       // Preload des header
       preload: path.join(__dirname, 'preload.js')
     },
