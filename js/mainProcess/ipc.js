@@ -366,3 +366,23 @@ ipcMain.on('deleteNotePasteur', (event, note) => {
         console.log("Message: " + msg);
       });
 })
+
+ipcMain.on('insertName', (event, arg) =>{
+    
+    let where = {
+        "settings": "settings"
+    }
+    
+    let set = { 
+        "techName": arg
+    }
+
+    // console.log(arg)
+    // console.log(location)
+    
+    db.updateRow('tech', locationTech, where, set, (succ, msg) => {
+        // succ - boolean, tells if the call is successful
+        console.log("Success: " + succ);
+        console.log("Message: " + msg);
+      });
+})

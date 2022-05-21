@@ -6,10 +6,12 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="../css/tailwind.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
 
 
 </head>
 <body class="bg-gray-100">
+    <input class="hidden" id="techName"></p>
     <div class="flex flex-col w-screen h-screen">
         <!-- barre de navigation -->
         <div class="flex flex-wrap justify-between nav-height bg-pink-400 items-center">
@@ -38,49 +40,91 @@
                         </div>
                     </form>
                 </div>
-                <!-- Bouton multiple pour les templates lié au contexte -->
-                <div class="flex flex-wrap bouton-area bg-gray-300 rounded-md mr-3">
-                    <div class="flex flex-wrap justify-center content-center ">
-                        <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="triggerNRP1()">NRP1</button>
-                        <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="triggerNRP2()">NRP2</button>
-                        <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="triggerNRP3()">NRP3</button>
-                        <!-- <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600"></button> -->
+
+                <!-- Bouton multiple pour les templates lié au contexte FRANCAIS -->
+                <div class="overflow-y-scroll flex flex-wrap bg-gray-300 rounded-md border-4 border-gray-300 mr-3 mt-3 h-96 w-1/2">
+                    
+                    <div class="flex flex-wrap justify-center content-center" style="display:block" id="buttonZoneFR">
+                        <img src="../img/french.png" onclick="switchLanguage()">
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full" style="visibility:visible" >
+                            <p>Appel</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="triggerNRP1()">NRP1</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="triggerNRP2()">NRP2</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="triggerNRP3()">NRP3</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelRelancePasteur()">J+1/2</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelRelancePasteurj4()">J+4</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelRelancePasteurj4vip()">J+4(Vip)</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelRelancePasteurj6()">J+6</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full">
+                            <p>PasteurID</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelProlongationPasteur()">Mail prolongation</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelValidationAdressSecour()">Mail de secours</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelValidationGaia()">Demande accès GAIA</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full">
+                            <p>Alias</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelAlias()">Alias</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full">
+                            <p>Logiciel</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelFlowjo()">Flowjo</button>
+                                <!-- <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelGraphPad()">GraphPad</button> -->
+                            </div>
+                        </div>
+                        <!-- <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick=""></button></button> -->
                     </div>
+                    <!-- Bouton multiple pour les templates lié au contexte ANGLAIS -->
+                    <div class="flex flex-wrap justify-center content-center" style="display:none" id="buttonZoneEN">
+                        <img src="../img/english.png" onclick="switchLanguage()">
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full"  >
+                            
+                            <p>Appel</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelRelancePasteurEN()">J+1/2</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelRelancePasteurj4EN()">J+4</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelRelancePasteurj4vipEN()">J+4(Vip)</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelRelancePasteurj6EN()">J+6</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full">
+                            <p>PasteurID</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelProlongationPasteurEN()">Mail prolongation</button>
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelValidationAdressSecourEN()">Mail de secours</button>
+                                
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full">
+                            <p>Alias</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelAliasEN()">Alias</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full">
+                            <p>Logiciel</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelFlowjoEN()">Flowjo</button>
+                                <!-- <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick="modelGraphPad()">GraphPad</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <button class="flex m-2 bg-pink-400 p-1 rounded-md border-4 border-pink-600 focus:outline-none" onclick=""></button></button> -->
+                </div>
+                    
                     
                 </div>
+                
 
                 <!-- Worflow du ticket -->
-                <div class="flex bg-gray-300 bouton-area rounded-md mr-3 items-center justify-center">
-                    <div class="flex flex-col">
-
-                        <div class="my-2 flex flex-wrap items-center">
-                            <input type="checkbox" id="description">
-                            <label for="description">Description</label>
-                        </div>
-
-                        <div class="my-2 flex flex-wrap items-center">
-                            <input type="checkbox" id="téléphone">
-                            <label for="téléphone">Téléphone</label>
-                        </div>
-
-                        <div class="my-2 flex flex-wrap items-center">
-                            <input type="checkbox" id="idMateriel">
-                            <label for="idMateriel">Poste</label>
-                        </div>
-
-                        <div class="my-2 flex flex-wrap items-center">
-                            <input type="checkbox" id="workNote">
-                            <label for="workNote">Diagnostic</label>
-                        </div>
-
-                        <div class="my-2 flex flex-wrap items-center">
-                            <input type="checkbox" id="pièceJointe">
-                            <label for="pièceJointe">Pièce Jointe</label>
-                        </div>
-
-                        <button class="rounded-md border-4 border-green-600 bg-green-400 focus:outline-none" id="resetCheckbox" onclick="resetWorkflow()">Check</button>
-                    </div>
-                </div>
+                
                 <!-- Menu déroulant pour le choix du context -->
                 <div class="flex flex-wrap w-screen justify-between items-center">
                     <form class="ml-3 ">

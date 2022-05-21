@@ -17,17 +17,18 @@ let win;
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 700,
+    width: 730,
     height: 630,
+    resizable: false,
     icon:"img/icon.ico",
     webPreferences: {
-      nodeIntegration: false,
+      nodeIntegration: true,
       contextIsolation: true,
       // Preload des header
       preload: path.join(__dirname, 'preload.js')
     },
   })
-  win.removeMenu()
+  // win.removeMenu()
   win.loadFile('indexes/index.html')
   // win.setMaximumSize(700, 630);
 

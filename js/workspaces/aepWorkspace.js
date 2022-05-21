@@ -1,13 +1,5 @@
 function triggerAEPNRP1(){
-    window.api.send("copyToClipboard", "[Relance sortante n°1] / NRP / MEVO / MAIL\npremière relance effectuée vers utilisateur");
-}
-
-function triggerAEPNRP2(){
-    window.api.send("copyToClipboard", "[Relance sortante n°2] / NRP / MEVO / MAIL\ndeuxième relance effectuée vers utilisateur");
-}
-
-function triggerAEPNRP3(){
-    window.api.send("copyToClipboard", "[Relance sortante n°3] / NRP / MEVO / MAIL\ntroisième et dernière relance effectuée vers utilisateur");
+    window.api.send("copyToClipboard", "[Relance sortante n°X] / NRP / MEVO / MAIL\nXème relance effectuée vers utilisateur");
 }
 
 function triggerRelance1AEP(){
@@ -30,20 +22,8 @@ function triggerAccountNote(){
     window.api.send("copyToClipboard","[Journal de travail]\n\n\nCréation de compte AD : OK\nAjout du script de session : OK\nAjout des groupes : OK\nCréation du dossier personnel : OK\nCréation de l'adresse mail : OK");
 }
 
-// function triggerPassword(){
-//     window.api.send("copyToClipboard","Bonjour,\n\nVoici votre mot de passe provisoire pour votre compte AEP :\n\nMerci de vous connecter à Citrix via le lien que vous avez reçu par mail suite à la création de votre compte AEP afin de le modifier.\n\nCordialement,");
-// }
-
 function triggerRedirection(){
     window.api.send("copyToClipboard","Mise en place de la redirection des mails AEP vers la boite mail BNP effectuée");
-}
-
-function triggerAppelEntrant(){
-    window.api.send("copyToClipboard", "[APPEL ENTRANT]");
-}
-
-function triggerWorknote(){
-    window.api.send("copyToClipboard", "[Journal de travail]")
 }
 
 function alfrescoRelanceEntrante(){
@@ -63,3 +43,10 @@ function helperAlert(){
     Comme SAADOUN, KARIM l'a précisé lors du dernier Weekly, une solution est en cours d'étude sur l'outil ITOP pour automatiser l'ensemble des ces actions mais en attendant nous vous demandons de bien appliquer ces différents TAG dès vos prochains tickets.");
 }
 
+function clotureMessage(){
+    window.api.send("copyToClipboard", "Bonjour,\n\nLe sujet a été traité via les demandes ITOP R-XXXXXX & R-XXXXXX.\n\nNous nous permettons de clore cet incident qui n'a plus lieu d'être.")
+}
+
+function triggerEndingNote(){
+    window.api.send("copyToClipboard", "Bonjour,\n\nNous venons de procéder à la création de votre compte AEP ainsi que de votre boite mail AEP qui n'étaient plus présents jusqu'à ce jour dans nos outils d'administration AEP.\n\nUn mail vous a été envoyé en parallèle indiquant votre mot de passe provisoire.\n\nPour le modifier, nous vous invitons à le changer depuis le lien suivant: https://citrix-new-aep-assurance.is.echonet/vpn/index.html\n\nEn cas de difficulté, merci de prendre contact avec notre support AEP au 01 50 55 22 63.")
+}

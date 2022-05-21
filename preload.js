@@ -8,13 +8,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const locationNote = path.join(__dirname, 'js','mainProcess', 'db');
     const locationTech = path.join(__dirname, 'js','mainProcess', 'db');
 
-
+    
     const keyAZ = 'timerAZ'
     const keyAZADM = 'timerAZADM'
     const keyPXS = 'timerPXS'
     const keyAEP1 = 'timerAEPECO1'
     const keyAEP2 = 'timerAEPECO2'
     const keyTrigram = 'trigram'
+    const keyName = 'techName'
     const keyNotePasteur = 'notePasteur'
     const keyNoteAZ = 'noteAZ'
     const keyNotePXS = 'notePXS'
@@ -31,26 +32,36 @@ window.addEventListener('DOMContentLoaded', () => {
     switch(pageID){
 
         case("info"):
+            db.getField('tech', locationTech, keyName, (succ, data) => {
+                let arg = data.toString()
+                console.log(arg)
+                document.getElementById('nameInput').setAttribute('placeholder', `${arg}`)
+            })
             db.getField('tech', locationTech, keyAZ, (succ, data) => {
-                var arg = data.toString()
+                let arg = data.toString()
                 document.getElementById('currentAZTimer').innerHTML=arg
             })
             db.getField('tech', locationTech, keyAZADM, (succ, data) => {
-                var arg = data.toString()
+                let arg = data.toString()
                 document.getElementById('currentAZADMTimer').innerHTML=arg
             })
             db.getField('tech', locationTech, keyPXS, (succ, data) => {
-                var arg = data.toString()
+                let arg = data.toString()
                 document.getElementById('currentPXSTimer').innerHTML=arg
              })
              db.getField('tech', locationTech, keyAEP1, (succ, data) => {
-                var arg = data.toString()
+                let arg = data.toString()
                 document.getElementById('currentAEPECO1Timer').innerHTML=arg
              })
              db.getField('tech', locationTech, keyAEP2, (succ, data) => {
-                var arg = data.toString()
+                let arg = data.toString()
                 document.getElementById('currentAEPECO2Timer').innerHTML=arg
              })
+             db.getField('tech', locationTech, keyTrigram, (succ, data) => {
+                let arg = data.toString()
+                console.log(arg)
+                document.getElementById('techTrigrame').setAttribute('placeholder', `${arg}`)
+            })
 
          break;
          
@@ -58,7 +69,12 @@ window.addEventListener('DOMContentLoaded', () => {
             db.getField('tech', locationTech, keyTrigram, (succ, data) => {
                 var arg = data.toString()
                 console.log(arg)
-                document.getElementById('techTrigrame').value=arg
+                document.getElementById('techTrigrame').innerHTML=arg
+            })
+            db.getField('tech', locationTech, keyName, (succ, data) => {
+                var arg = data.toString()
+                console.log(arg)
+                document.getElementById('techName').innerHTML=arg
             })
             db.getField('note', locationNote, keyNoteAZ, (succ, data) => {
                 var arg = data.toString()
@@ -66,8 +82,13 @@ window.addEventListener('DOMContentLoaded', () => {
             })
             break;
 
-
             case("Pasteur"):
+            db.getField('tech', locationTech, keyName, (succ, data) => {
+                var arg = data.toString()
+                console.log(arg)
+                document.getElementById('techName').value=arg
+            })
+
             db.getField('note', locationNote, keyNotePasteur, (succ, data) => {
                 data = data.toString()
                 document.getElementById('postIt').innerHTML = data       
@@ -75,6 +96,12 @@ window.addEventListener('DOMContentLoaded', () => {
             break;
 
             case("PXS"):
+            db.getField('tech', locationTech, keyName, (succ, data) => {
+                var arg = data.toString()
+                console.log(arg)
+                document.getElementById('techName').innerHTML=arg
+            })
+
             db.getField('note', locationNote, keyNotePXS, (succ, data) => {
                 data = data.toString()
                 document.getElementById('postIt').innerHTML = data       
@@ -82,6 +109,12 @@ window.addEventListener('DOMContentLoaded', () => {
             break;
 
             case("AEP"):
+            db.getField('tech', locationTech, keyName, (succ, data) => {
+                var arg = data.toString()
+                console.log(arg)
+                document.getElementById('techName').innerHTML=arg
+            })
+
             db.getField('note', locationNote, keyNoteAEP, (succ, data) => {
                 data = data.toString()
                 document.getElementById('postIt').innerHTML = data       
@@ -89,6 +122,12 @@ window.addEventListener('DOMContentLoaded', () => {
             break;
 
             case("FDP"):
+            db.getField('tech', locationTech, keyName, (succ, data) => {
+                var arg = data.toString()
+                console.log(arg)
+                document.getElementById('techName').innerHTML=arg
+            })
+            
             db.getField('note', locationNote, keyNoteFDP, (succ, data) => {
                 data = data.toString()
                 document.getElementById('postIt').innerHTML = data       

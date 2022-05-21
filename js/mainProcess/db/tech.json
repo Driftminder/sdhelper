@@ -2,13 +2,14 @@
   "tech": [
     {
       "settings": "settings",
-      "trigram": "",
+      "techName": "Guillaume C",
+      "trigram": "GCO",
       "timerAZ": "",
       "timerPXS": "",
       "timerAZADM": "",
       "timerAEPECO1": "",
       "timerAEPECO2": "",
-      "id": 1627074549471
+      "id": 1638641129600
     }
   ]
 }

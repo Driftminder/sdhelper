@@ -7,7 +7,8 @@ const context = {
     PASTEUR: 4,
     EPV: 5,
     AEP: 6,
-    INFO: 7
+    INFO: 7,
+    TEMPLATE: 8
 }
 
 Object.keys(context).forEach(key => {
@@ -49,6 +50,9 @@ function selectContextWindow($event){
 
         case context.INFO:
             window.api.send("changeContext", "infoIndex.html")
+
+        case context.TEMPLATE:
+            window.api.send("changeContext", "Template.html")
     }
 }
 
@@ -69,11 +73,10 @@ function triggerNRP3(){
 function noteSavingAZ(){
     
     var note = document.getElementById("postIt").value
-    var trig = document.getElementById("techTrigrame").value
-    console.log(trig)
+    
 
     window.api.send("noteSavingAZ", note)
-    window.api.send("updateTrigram", trig)
+    
     
 }
 

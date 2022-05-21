@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="../css/tailwind.min.css">
     <link rel="stylesheet" href="../css/style.css">
-
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
 
 </head>
 <body class="bg-gray-100">
@@ -19,22 +19,50 @@
                     <img class="mx-3"src="../img/sdhelper.png"/>
                 </div>
                 <!-- Numéro de version -->
-                <p>V2.0.1</p>
             </div>
             <!-- corps de l'application -->
             <div class="flex flex-wrap w-screen h-screen bg-gray-400">
-                <div class="flex flex-wrap w-screen">
-                    <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
+                <div class="flex flex-col w-screen justify-between">
+                   
+                    <div class="overflow-y-scroll flex flex-col bg-gray-300 rounded-md border-4 border-gray-300 h-96 w-1/2 m-5" >
+                        <div class="">
+                            <h1 class="font-black font-mono text-xl">SDHelper 2.2.0</h1>
+                        </div>
+                        <div class="font-mono">
+                           <!-- <ul class="list-decimal">
+                               <p class="font-black font-mono">Globale</p>
+                              <li> </li>
+                               
+                           </ul> -->
+                        </div>
+                        <div class="font-mono">
+                            <p class="font-black font-mono text-pink-400">Pasteur</p>
+                            <ul>
+                                <li>- Ajout de multiple template de mail (Merci GGI)</li>
+                                <li>- Ajout d'un bouton drapaux permettant de choisir entre le mail français et anglais</li>
+                            </ul>
+                        </div>
+                        <div class="font-mono">
+                            <p class="font-black font-mono text-blue-400">Antargaz</p>
+                            <ul>
+                                <li>- Correction du trigrame qui s'en allait à sauvegarde ou changement de page</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="flex flex-col justify-center content-center m-5">
+                        
                                         
                         <!-- Menu déroulant pour le choix du context -->
-                        <div class="flex flex-wrap m-3 p-3">
+                        
                             <form>
                                 <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="selectContextWindow(this)">
                             </select>
                             </form>
-                        </div>  
-
+                          
                     </div>
+                    
+
                     
                     
                 </div>

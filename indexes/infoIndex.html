@@ -10,6 +10,7 @@
 
 </head>
 <body class="bg-gray-100">
+    <input class="hidden" id="techName"></p>
 
         <div class="flex flex-col w-screen h-screen">
             <!-- barre de navigation -->
@@ -20,7 +21,7 @@
                     <img class="mx-3"src="../img/sdhelper.png"/>
                 </div>
                 <!-- Numéro de version -->
-                <p>V2.0.1</p>
+                <p>V2.2.0</p>
             </div>
             <!-- corps de l'application -->
             <div class="flex flex-wrap w-screen h-screen bg-gray-400">
@@ -95,10 +96,25 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Information personnel du tech-->
+                    <div class="flex flex-col w-50 justify-center content-center bg-gray-300 w-50 m-5">
+                        <div class="flex flex-col ml-3 pr-3">
+                            <label>Prénom du tech</label>
+                            <input id="nameInput" type="text" size="10">
+                            <button class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="setName()">Enregistrer</button>
+                        </div>
+                        <div class="flex flex-col ml-3 pr-3">
+                            <label>Trigrame du tech</label>
+                            <input class="mr-3 focus:outline-none" type="text" placeholder="" id="techTrigrame" value="" size="3">
+                            <button class="bg-white m-3 rounded-md border-4 focus:outline-none active:bg-gray-300 border-green-200 bg-green-400" onclick="setTrigrame()">Enregistrer</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+    
     <script src = "../js/workspace.js" ></script>
     <script src = "../js/workspaces/mainpage.js"></script>
     <script src="../js/workspaces/mainpage.js"></script>
+    <script>  </script>
 </body>
 </html>

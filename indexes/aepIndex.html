@@ -10,6 +10,7 @@
 
 </head>
 <body class="bg-gray-100">
+    <input class="hidden" id="techName"></p>
     <div class="flex flex-col w-screen h-screen">
         <!-- barre de navigation -->
         <div class="flex flex-wrap justify-between nav-height bg-purple-400 items-center">
@@ -50,17 +51,33 @@
                     </form>
                 </div>
                 <!-- Bouton multiple pour les templates lié au contexte -->
-                <div class="flex flex-wrap bouton-area bg-gray-300 rounded-md mr-3">
+                <div class="overflow-y-scroll flex flex-wrap bg-gray-300 rounded-md border-4 border-gray-300 mr-3 mt-3 h-96 w-1/2">
                     <div class="flex flex-wrap justify-center content-center ">
-                        <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerAEPNRP1()">NRP1</button>
-                        <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerAEPNRP2()">NRP2</button>
-                        <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerAEPNRP3()">NRP3</button>
-                        <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerADGroup()">Groupes AD</button>
-                        <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerAccountNote()">Note Compte</button>
-                        <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerRedirection()">Note redirection</button>
-                        <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerRelance1AEP()">Relance 1</button>
-                        <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerRelance2AEP()">Relance 2</button>
-                        <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerRelance3AEP()">Relance 3</button>
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full">
+                            <p>Appel sortant</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerAEPNRP1()">NRP</button>
+                                <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerRelance1AEP()">Relance 1</button>
+                                <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerRelance2AEP()">Relance 2</button>
+                                <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerRelance3AEP()">Relance 3</button>   
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full">
+                            <p>Validation AD</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerADGroup()">Groupes AD</button>
+                                <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerAccountNote()">Note création de compte</button>
+                                <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerRedirection()">Note création de redirection</button>
+                                <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="triggerEndingNote()">Cloture création de compte</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-gray-400 rounded-md border-4 w-full">
+                            <p>incident</p>
+                            <div class="flex flex-wrap">
+                                <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600 focus:outline-none" onclick="clotureMessage()">Cloture incident absence de compte</button>
+                            </div>
+                        </div>
                         <!-- <button class="flex m-2 bg-purple-400 p-1 rounded-md border-4 border-purple-600"></button> -->
                     </div>
                     
@@ -74,6 +91,7 @@
                     <button class="flex m-2 bg-gray-500 p-1 rounded-md border-4 border-black focus:outline-none" onclick="alfrescoEscalade()">Escalade</button>
                     <button class="flex m-2 bg-gray-500 p-1 rounded-md border-4 border-black focus:outline-none" onclick="alfrescoRelanceSortante()">Relance Sortante</button>
                     <button class="flex m-2 bg-gray-500 p-1 rounded-md border-4 border-black focus:outline-none" onclick="alfrescoRelanceEntrante()">Relance Entrante</button>
+                    
                 </div>
             </div>
         </div>  

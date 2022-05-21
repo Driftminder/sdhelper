@@ -39,3 +39,14 @@ function updateAZTimer($event){
     var timer = formattedDate();
     window.api.send('insertAZTimer', timer);
 }
+
+function setName($event){
+    var data = document.getElementById("nameInput").value
+    window.api.send('insertName', data)
+}
+
+function setTrigrame($event){
+    var trig = document.getElementById("techTrigrame").value
+    console.log(trig)
+    window.api.send("updateTrigram", trig)
+}

@@ -1,6 +1,6 @@
 {
   "name": "sdhelper",
-  "version": "2.0.1",
+  "version": "2.2.0",
   "description": "Application de centralisation de template et d'information pour le plateau mutualisé du HelpDesk Econocom de Tours",
   "main": "main.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "electron-reloader": "^1.2.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "dotenv": "^8.2.0",
     "electron-db": "^0.15.7",
     "electron-log": "^4.3.5",

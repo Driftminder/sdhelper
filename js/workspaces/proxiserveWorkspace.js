@@ -58,3 +58,7 @@ function helperAlert(){
     window.alert("Pas de nouvelle information.")
 }
 
+function triggerRelanceSortante(){
+    window.api.send("copyToClipboard", "Bonjour,\n\nJ'ai tenté de vous joindre concernant le ticket XXXX pour XXXX. Je vous invite à me recontacter au 01.69.18.67.82 afin de traiter votre dossier au plus vite.\n\nCordialement,\n\nXXX\n\nSupport Proxiserve\n\Tel :01.69.18.67.82")
+}
+

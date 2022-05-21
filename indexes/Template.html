@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="../css/tailwind.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+
+</head>
+<body class="bg-gray-100">
+    <input class="hidden" id="techName"></p>
+
+        <div class="flex flex-col w-screen h-screen">
+            <!-- barre de navigation -->
+            <div class="flex flex-wrap nav-height">
+                <p id="identifiantPage" class="hidden">info</p>
+                <!-- Placement du logo -->
+                <div class="bg-gray-200 w-screen h-100">
+                    <img class="mx-3"src="../img/sdhelper.png"/>
+                </div>
+                <!-- Numéro de version -->
+                <p>V2.2.0</p>
+            </div>
+            <!-- corps de l'application -->
+            <div class="flex flex-wrap w-screen h-screen bg-gray-400">
+                <div class="flex flex-wrap w-screen">
+                    <div class="flex flex-col w-50 justify-center content-center bg-gray-300 m-5">
+                        <!-- Ajoute de template dans la base Pasteur -->
+
+                        <!-- Menu déroulant pour le choix du context -->
+                        <div class="flex flex-wrap m-3 p-3">
+                            <form>
+                                <select size="1" name="context" id="windowSwitch" class="focus:outline-none" onchange="selectContextWindow(this)">
+                            </select>
+                            </form>
+                        </div>  
+
+                    </div>
+                    
+                </div>
+            </div>
+    
+    <script src = "../js/workspace.js" ></script>
+    <script src="../js/workspaces/Template.js"></script>
+    <script>  </script>
+</body>
+</html>

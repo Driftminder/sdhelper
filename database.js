@@ -2,6 +2,7 @@ const db = require('electron-db');
 const path = require('path');
 const locationNote = path.join(__dirname, 'js','mainProcess', 'db');
 const locationTech = path.join(__dirname, 'js','mainProcess', 'db');
+const locationTemplatePasteur = path.join(__dirname, 'js','mainProcess', 'db');
 
 
 function createTechSetting(){
@@ -12,6 +13,7 @@ function createTechSetting(){
     let obj = new Object();
   
     obj.settings = "settings"
+    obj.techName = "";
     obj.trigram = "";
     obj.timerAZ = "";
     obj.timerPXS = "";
@@ -56,9 +58,22 @@ db.createTable('note', locationNote,  (succ, msg) => {
 })
 
 }
+//Création de la base de données Template
+function createTablePasteur(){
+  db.createTable('templatePasteur', locationTemplatePasteur,  (succ, msg) => {
+    // succ - boolean, tells if the call is successful
+    if (succ) {
+  
+      console.log(msg)
+    } else {
+      console.log('La base "templatePasteur" existe déjà ' + msg)
+    }
+  })
+  
+  }
 
+createTablePasteur()
 createTechSetting()
 createTableNote()
-
 
 
